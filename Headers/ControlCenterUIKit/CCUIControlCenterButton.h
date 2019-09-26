@@ -7,7 +7,7 @@
 */
 
 #import <ControlCenterUIKit/ControlCenterUIKit-Structs.h>
-#import <SpringBoardFoundation/SBFButton.h>
+#import "SBFButton.h"
 #import "_UISettingsKeyObserver.h"
 
 @protocol CCUIControlCenterButtonDelegate;
@@ -15,7 +15,7 @@
 
 @interface CCUIControlCenterButton : SBFButton <_UISettingsKeyObserver> {
 
-	unsigned long long _buttonType;
+	NSUInteger _buttonType;
 	UIColor* _selectedColor;
 	UIImageView* _glyphImageView;
 	UILabel* _label;
@@ -25,29 +25,29 @@
 	BOOL _animatesStateChanges;
 	BOOL _showingMenu;
 	id<CCUIControlCenterButtonDelegate> _delegate;
-	unsigned long long _roundCorners;
+	NSUInteger _roundCorners;
 	UIImage* _glyphImage;
 	UIImage* _selectedGlyphImage;
-	double _naturalHeight;
+	CGFloat _naturalHeight;
 
 }
 
 @property (nonatomic,retain) UIImage * glyphImage;                                             //@synthesize glyphImage=_glyphImage - In the implementation block
 @property (nonatomic,retain) UIImage * selectedGlyphImage;                                     //@synthesize selectedGlyphImage=_selectedGlyphImage - In the implementation block
-@property (assign,nonatomic) double naturalHeight;                                             //@synthesize naturalHeight=_naturalHeight - In the implementation block
-@property (assign,nonatomic,weak) id<CCUIControlCenterButtonDelegate> delegate;              //@synthesize delegate=_delegate - In the implementation block
+@property (assign,nonatomic) CGFloat naturalHeight;                                             //@synthesize naturalHeight=_naturalHeight - In the implementation block
+@property (nonatomic,weak) id<CCUIControlCenterButtonDelegate> delegate;              //@synthesize delegate=_delegate - In the implementation block
 @property (assign,nonatomic) BOOL animatesStateChanges;                                        //@synthesize animatesStateChanges=_animatesStateChanges - In the implementation block
 @property (getter=isInternal,nonatomic,readonly) BOOL internal;
-@property (assign,nonatomic) unsigned long long roundCorners;                                  //@synthesize roundCorners=_roundCorners - In the implementation block
+@property (assign,nonatomic) NSUInteger roundCorners;                                  //@synthesize roundCorners=_roundCorners - In the implementation block
 @property (assign,getter=isShowingMenu,nonatomic) BOOL showingMenu;                            //@synthesize showingMenu=_showingMenu - In the implementation block
 @property (nonatomic,retain) UIFont * font;
-@property (assign,nonatomic) long long numberOfLines;
+@property (assign,nonatomic) NSInteger numberOfLines;
 @property (nonatomic,retain) NSString * text;
 @property (readonly) NSUInteger hash;
 @property (readonly) Class superclass;
 @property (copy,readonly) NSString * description;
 @property (copy,readonly) NSString * debugDescription;
-+(id)_buttonWithSelectedColor:(id)arg1 text:(id)arg2 type:(unsigned long long)arg3 ;
++(id)_buttonWithSelectedColor:(id)arg1 text:(id)arg2 type:(NSUInteger)arg3 ;
 +(id)smallCircularButtonWithSelectedColor:(id)arg1 ;
 +(id)circularButtonWithSelectedColor:(id)arg1 ;
 +(id)roundRectButton;
@@ -56,8 +56,8 @@
 +(id)capsuleButtonWithText:(id)arg1 ;
 -(id)initWithFrame:(CGRect)arg1 ;
 -(void)setFrame:(CGRect)arg1 ;
--(void)setNumberOfLines:(long long)arg1 ;
--(double)cornerRadius;
+-(void)setNumberOfLines:(NSInteger)arg1 ;
+-(CGFloat)cornerRadius;
 -(void)layoutSubviews;
 -(id<CCUIControlCenterButtonDelegate>)delegate;
 -(void)setDelegate:(id<CCUIControlCenterButtonDelegate>)arg1 ;
@@ -68,27 +68,27 @@
 -(NSString *)text;
 -(void)setText:(NSString *)arg1 ;
 -(void)setFont:(UIFont *)arg1 ;
--(void)setBackgroundImage:(id)arg1 forState:(unsigned long long)arg2 ;
+-(void)setBackgroundImage:(id)arg1 forState:(NSUInteger)arg2 ;
 -(void)setEnabled:(BOOL)arg1 ;
--(void)_setButtonType:(unsigned long long)arg1 ;
+-(void)_setButtonType:(NSUInteger)arg1 ;
 -(BOOL)_shouldAnimatePropertyWithKey:(id)arg1 ;
 -(void)didMoveToSuperview;
 -(UIFont *)font;
--(long long)numberOfLines;
+-(NSInteger)numberOfLines;
 -(void)settings:(id)arg1 changedValueForKey:(id)arg2 ;
--(void)setImage:(id)arg1 forState:(unsigned long long)arg2 ;
+-(void)setImage:(id)arg1 forState:(NSUInteger)arg2 ;
 -(void)_updateEffects;
 -(UIImage *)glyphImage;
 -(void)setGlyphImage:(UIImage *)arg1 ;
 -(void)setSelectedGlyphImage:(UIImage *)arg1 ;
 -(UIImage *)selectedGlyphImage;
 -(BOOL)_drawingAsSelected;
--(double)naturalHeight;
+-(CGFloat)naturalHeight;
 -(void)_updateForStateChange;
--(long long)_currentState;
+-(NSInteger)_currentState;
 -(void)setShowingMenu:(BOOL)arg1 ;
 -(BOOL)isShowingMenu;
--(id)initWithFrame:(CGRect)arg1 selectedColor:(id)arg2 text:(id)arg3 type:(unsigned long long)arg4 ;
+-(id)initWithFrame:(CGRect)arg1 selectedColor:(id)arg2 text:(id)arg3 type:(NSUInteger)arg4 ;
 -(BOOL)_isCircleButton;
 -(BOOL)_isRectButton;
 -(BOOL)_isCapsuleButton;
@@ -98,16 +98,16 @@
 -(void)_updateForReduceTransparencyChange;
 -(void)_updateForDarkerSystemColorsChange:(id)arg1 ;
 -(void)_calculateRectForGlyph:(CGRect*)arg1 rectForLabel:(CGRect*)arg2 ignoringBounds:(BOOL)arg3 ;
--(id)_glyphImageForState:(long long)arg1 ;
+-(id)_glyphImageForState:(NSInteger)arg1 ;
 -(void)_updateNaturalHeight;
 -(void)_updateGlyphAndTextForStateChange;
--(void)setNaturalHeight:(double)arg1 ;
+-(void)setNaturalHeight:(CGFloat)arg1 ;
 -(id)_effectiveSelectedColor;
--(unsigned long long)roundCorners;
+-(NSUInteger)roundCorners;
 -(BOOL)animatesStateChanges;
--(id)_controlStateStringFromState:(long long)arg1 ;
+-(id)_controlStateStringFromState:(NSInteger)arg1 ;
 -(BOOL)_isRectTextButton;
--(void)setRoundCorners:(unsigned long long)arg1 ;
+-(void)setRoundCorners:(NSUInteger)arg1 ;
 -(void)setAnimatesStateChanges:(BOOL)arg1 ;
 -(id)ccuiPunchOutMaskForView:(id)arg1 ;
 -(void)setGlyphImage:(id)arg1 selectedGlyphImage:(id)arg2 name:(id)arg3 ;

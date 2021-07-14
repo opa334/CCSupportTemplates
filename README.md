@@ -1,4 +1,4 @@
 # CCSupportTemplates
 Templates and headers for module development
 
-(Deprecated, now included inside theos itself, the headers provided here could still be useful tho)
+(The module template now included inside theos itself, the module provider template is not)

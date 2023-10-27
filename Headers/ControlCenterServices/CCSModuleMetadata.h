@@ -38,6 +38,7 @@
 - (NSSet *)requiredDeviceCapabilities;
 - (NSString *)moduleIdentifier;
 - (id)_initWithModuleIdentifier:(id)arg1 supportedDeviceFamilies:(id)arg2 requiredDeviceCapabilities:(id)arg3 associatedBundleIdentifier:(id)arg4 associatedBundleMinimumVersion:(id)arg5 visibilityPreference:(NSUInteger)arg6 moduleBundleURL:(id)arg7;
+- (id)_initWithModuleIdentifier:(id)arg1 supportedDeviceFamilies:(id)arg2 requiredDeviceCapabilities:(id)arg3 requiredDeviceIncapabilities:(id)arg4 associatedBundleIdentifier:(id)arg5 associatedBundleMinimumVersion:(id)arg6 visibilityPreference:(NSUInteger)arg7 moduleBundleURL:(id)arg8;
 - (NSSet *)supportedDeviceFamilies;
 - (NSString *)associatedBundleIdentifier;
 - (NSString *)associatedBundleMinimumVersion;
